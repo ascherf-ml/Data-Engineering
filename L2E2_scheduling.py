@@ -17,8 +17,7 @@ def load_trip_data_to_redshift(*args, **kwargs):
     redshift_hook = PostgresHook("redshift")
     sql_stmt = sql_statements.COPY_ALL_TRIPS_SQL.format(
         credentials.access_key,
-        credentials.secret_key,
-    )
+        credentials.secret_key)
     redshift_hook.run(sql_stmt)
 
 
